@@ -1,0 +1,26 @@
+assinged the ip in vlan
+
+Switch>en
+Switch#conf t
+Enter configuration commands, one per line.  End with CNTL/Z.
+Switch(config)#int
+Switch(config)#interface vla
+Switch(config)#interface vlan 1
+Switch(config-if)#ip address 10.0.0.1 255.0.0.0
+Switch(config-if)#no shutdown
+
+Switch(config-if)#
+%LINK-5-CHANGED: Interface Vlan1, changed state to up
+
+Switch(config-if)#exit
+
+
+set the password in switch
+----------------------------------><
+
+Switch(config)#line vty 0 15
+Switch(config-line)#transport input telnet
+Switch(config-line)#password 123
+Switch(config-line)#login
+Switch(config-line)#enable password 123
+Switch(config)#exit
